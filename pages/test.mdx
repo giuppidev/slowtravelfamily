@@ -1,5 +1,16 @@
-# Titolo
+import { Greetings } from "../components/Greetings";
+import { Layout } from "../components/Layout";
+
+export const meta = {
+  title: "Titolo del layout",
+};
+
+# Titolo della pagina
 
 **parola**
 
 _lettera_
+
+<Greetings name="pippo" />
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
