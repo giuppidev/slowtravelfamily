@@ -77,6 +77,7 @@ const getBlogData = async () => {
             data.publishedDate.getMonth() + 1
           }/${data.slug}`,
         },
+        content: content,
       };
     })
   );

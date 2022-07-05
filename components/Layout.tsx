@@ -1,5 +1,6 @@
 import { NextComponentType, NextPageContext } from "next";
 import Head from "next/head";
+import Footer from "./footer";
 import NavBar from "./navbar";
 
 function Layout({ children }: { children: any }) {
@@ -13,9 +14,9 @@ function Layout({ children }: { children: any }) {
       <header>
         <NavBar />
       </header>
-      <main className="">
+      <main className="relative">
         {children}
-        <div>FOOTER</div>
+        <Footer />
       </main>
     </div>
   );

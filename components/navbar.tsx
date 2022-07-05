@@ -38,40 +38,44 @@ const remoteWorking = [
     icon: CursorClickIcon,
   },
 ];
+
 const menu: Menu[] = [
+  { name: "Chi sono", href: "remote" },
   { name: "Dove lavorare", href: "remote" },
   { name: "Blog", href: "blog" },
   { name: "Risorse", href: "risorse" },
+  { name: "Trovare lavoro", href: "risorse" },
 ];
 
 export default function NavBar() {
   return (
-    <Popover className="relative bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
+    <Popover className="relative bg-primaryGreen">
+      <div className=" mx-auto px-4 sm:px-6">
+        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+          <div className="flex justify-start lg:flex-1">
             <a href="#">
-              <span className="sr-only">Workflow</span>
+              <span className="sr-only">Lavoro nomade</span>
               <img
                 className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                src="https://tailwindui.com/img/logos/workflow-mark-white.svg"
                 alt=""
               />
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <Popover.Button className="bg-green-500 rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
+
           <Popover.Group as="nav" className="hidden md:flex space-x-10">
             {menu.map((option) => {
               if (option.href) {
                 return (
                   <a
                     href={option.href}
-                    className="text-base font-medium text-gray-500 hover:text-gray-900"
+                    className="text-base font-medium text-white hover:text-gray-200"
                   >
                     {option.name}
                   </a>
@@ -87,6 +91,16 @@ export default function NavBar() {
               return null;
             })}
           </Popover.Group>
+          <div className="hidden items-center justify-end space-x-8 md:flex-1 lg:flex lg:w-0">
+            <div className="inline-flex rounded-md shadow">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primaryYellow hover:bg-yellow-700"
+              >
+                Inizia qui
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -119,7 +133,7 @@ export default function NavBar() {
                       href={item.href}
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
-                      <span className="ml-3 text-base font-medium text-gray-900">
+                      <span className="ml-3 text-base font-medium text-white">
                         {item.name}
                       </span>
                     </a>
@@ -181,7 +195,7 @@ const SubmenuComponent = ({ name, items }: SubmenuComponentProps) => {
                         aria-hidden="true"
                       />
                       <div className="ml-4">
-                        <p className="text-base font-medium text-gray-900">
+                        <p className="text-base font-medium text-white">
                           {item.name}
                         </p>
                         <p className="mt-1 text-sm text-gray-500">
