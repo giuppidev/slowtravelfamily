@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import { Fragment } from "react";
+import { LogoLN, LogoLN2 } from "./logo";
 
 type HeroIcon = (props: React.ComponentProps<"svg">) => JSX.Element;
 
@@ -40,30 +41,26 @@ const remoteWorking = [
 ];
 
 const menu: Menu[] = [
-  { name: "Chi sono", href: "remote" },
-  { name: "Dove lavorare", href: "remote" },
-  { name: "Blog", href: "blog" },
-  { name: "Risorse", href: "risorse" },
+  { name: "Dove lavorare", href: "map" },
   { name: "Trovare lavoro", href: "risorse" },
+  { name: "Risorse", href: "risorse" },
+  { name: "Blog", href: "blog" },
+  { name: "Chi sono", href: "remote" },
 ];
 
 export default function NavBar() {
   return (
-    <Popover className="relative bg-primaryGreen">
+    <Popover className="relative bg-primaryGreen px-4 lg:px-12">
       <div className=" mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center py md:justify-start md:space-x-10">
           <div className="flex justify-start lg:flex-1">
-            <a href="#">
+            <a href="/">
               <span className="sr-only">Lavoro nomade</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-white.svg"
-                alt=""
-              />
+              <LogoLN2 className="h-24 w-24 text-white" />
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-green-500 rounded-md p-2 inline-flex items-center justify-center text-white hover:text-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-primaryGreen hover:text-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-700">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -120,7 +117,7 @@ export default function NavBar() {
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-end w-full">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-700">
                   <span className="sr-only">Close menu</span>
                   <XIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
@@ -133,7 +130,7 @@ export default function NavBar() {
                       href={item.href}
                       className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                     >
-                      <span className="ml-3 text-base font-medium text-white">
+                      <span className="ml-3 text-base font-medium text-gray-800">
                         {item.name}
                       </span>
                     </a>
