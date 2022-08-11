@@ -1,49 +1,46 @@
 import { GoogleMap, LoadScript, Marker, InfoBox } from "@react-google-maps/api";
+import { WorkPlace } from "contentlayer/generated";
 import { useState } from "react";
 
 const containerStyle = {
   width: "100%",
-  height: "600px",
+  height: "296px",
+  borderRadius: "4px",
 };
 const centerCoords = {
   lng: 12.71216,
-  lat: 41.29085,
+  lat: 43.29085,
 };
-const turin = { lat: 45.0735886, lng: 7.6055665 };
 
-export default function Map() {
-  const [isTurinClicked, clickTurin] = useState(false);
-  const [center, setCenter] = useState(centerCoords);
+interface MapProps {
+  locations: Omit<WorkPlace, "body">[];
+}
+
+export default function Map({ locations }: MapProps) {
+  const [center] = useState(centerCoords);
+
   return (
-    <div className="grid grid-cols-2">
-      <div className="w-full p-8 rounded">
-        <LoadScript
-          googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || ""}
+    <div className="w-full rounded">
+      <LoadScript
+        googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || ""}
+      >
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={5}
+          // options={{ styles: vintageJSON }}
         >
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={6}
-            options={{ styles: vintageJSON }}
-          >
+          {locations.map((location, k) => (
             <Marker
-              position={turin}
-              label="Turin"
-              onClick={() => clickTurin(true)}
+              key={k}
+              position={{ lat: location.latitude, lng: location.longitude }}
+              label={location.name}
             />
+          ))}
 
-            <></>
-          </GoogleMap>
-        </LoadScript>
-      </div>
-      <div className="p-8">
-        <div
-          className={`${isTurinClicked ? "bg-red-500" : "bg-white"} p-4`}
-          onClick={() => setCenter(turin)}
-        >
-          Turin
-        </div>
-      </div>
+          <></>
+        </GoogleMap>
+      </LoadScript>
     </div>
   );
 }

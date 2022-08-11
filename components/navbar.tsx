@@ -6,9 +6,14 @@ import {
   MenuIcon,
   XIcon,
 } from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import {
+  ArrowCircleRightIcon,
+  ChevronDownIcon,
+  FlagIcon,
+} from "@heroicons/react/solid";
+import { useRouter } from "next/router";
 import { Fragment } from "react";
-import { LogoLN, LogoLN2 } from "./logo";
+import { LogoL, LogoN } from "./logo";
 
 type HeroIcon = (props: React.ComponentProps<"svg">) => JSX.Element;
 
@@ -23,6 +28,10 @@ interface Menu {
   name: String;
   href?: string;
   submenu?: Submenu[];
+}
+
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
 }
 
 const remoteWorking = [
@@ -41,38 +50,70 @@ const remoteWorking = [
 ];
 
 const menu: Menu[] = [
-  { name: "Dove lavorare", href: "map" },
-  { name: "Trovare lavoro", href: "risorse" },
-  { name: "Risorse", href: "risorse" },
-  { name: "Blog", href: "blog" },
-  { name: "Chi sono", href: "remote" },
+  { name: "Home", href: "/" },
+  { name: "Dove lavorare", href: "/work-places" },
+  // { name: "Trovare lavoro", href: "/jobs" },
+  { name: "Risorse", href: "/resources" },
+  { name: "Blog", href: "/blog" },
+  { name: "Chi sono", href: "/who-am-i" },
 ];
 
 export default function NavBar() {
+  const router = useRouter();
+
+  const linkActive = (path: string) => {
+    if (path === "/") {
+      return router.pathname === path;
+    }
+
+    return router.pathname.startsWith(path);
+  };
+
   return (
-    <Popover className="relative bg-primaryGreen px-4 lg:px-12">
-      <div className=" mx-auto px-4 sm:px-6">
-        <div className="flex justify-between items-center py md:justify-start md:space-x-10">
-          <div className="flex justify-start lg:flex-1">
-            <a href="/">
+    <Popover className="relative bg-primaryGreen px-4 lg:px-8  ">
+      <div className=" mx-auto px-4 sm:px-6  max-w-7xl h-18">
+        <div className="flex flex-1 justify-between items-center sm:items-stretch  md:justify-start md:space-x-10 h-full">
+          <div className="flex justify-start lg:flex-1 py-2">
+            <a href="/" className="flex items-end text-white text-4xl py-2">
               <span className="sr-only">Lavoro nomade</span>
-              <LogoLN2 className="h-24 w-24 text-white" />
+              <LogoL className="h-10 w-10 text-white" />
+              <span className="-ml-0.5 pr-4 -mb-1">avoro</span>
+              <LogoN className="h-10 w-10 text-white" />
+              <span className="-ml-1 pr-4 -mb-1">omade</span>
             </a>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-primaryGreen hover:text-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-700">
-              <span className="sr-only">Open menu</span>
+              <span className="sr-only">Apri menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
 
-          <Popover.Group as="nav" className="hidden md:flex space-x-10">
-            {menu.map((option) => {
+          <Popover.Group
+            as="div"
+            className="hidden md:flex space-x-10 flex-shrink-0 pt-1"
+          >
+            {menu.map((option, k) => {
               if (option.href) {
                 return (
                   <a
                     href={option.href}
-                    className="text-base font-medium text-white hover:text-gray-200"
+                    key={k}
+                    className={classNames(
+                      "inline-flex items-center px-1 pt-1 border-b-4 text-base font-semibold",
+                      linkActive(option.href)
+                        ? "border-b-4 border-b-primaryYellow text-primaryYellow"
+                        : "text-white border-b-transparent hover:text-primaryYellow hover:border-b-4 hover:border-b-primaryYellow"
+                    )}
+                  >
+                    {option.name}
+                  </a>
+                );
+                return (
+                  <a
+                    href={option.href}
+                    key={k}
+                    className="inline-flex items-center border-b-4 border-b-transparent  text-base h-full font-medium text-white hover:text-primaryYellow hover:border-b-4 hover:border-b-primaryYellow"
                   >
                     {option.name}
                   </a>
@@ -81,7 +122,11 @@ export default function NavBar() {
 
               if (option.submenu) {
                 return (
-                  <SubmenuComponent name={option.name} items={option.submenu} />
+                  <SubmenuComponent
+                    key={k}
+                    name={option.name}
+                    items={option.submenu}
+                  />
                 );
               }
 
@@ -89,12 +134,27 @@ export default function NavBar() {
             })}
           </Popover.Group>
           <div className="hidden items-center justify-end space-x-8 md:flex-1 lg:flex lg:w-0">
-            <div className="inline-flex rounded-md shadow">
+            <div className="flex rounded-md shadow">
               <a
                 href="#"
-                className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primaryYellow hover:bg-yellow-700"
+                className="flex flex-row gap-1 w-32 items-center justify-center px-3 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-700"
               >
-                Inizia qui
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fab"
+                  data-icon="youtube"
+                  className="h-6 w-6"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M549.7 124.1c-6.281-23.65-24.79-42.28-48.28-48.6C458.8 64 288 64 288 64S117.2 64 74.63 75.49c-23.5 6.322-42 24.95-48.28 48.6-11.41 42.87-11.41 132.3-11.41 132.3s0 89.44 11.41 132.3c6.281 23.65 24.79 41.5 48.28 47.82C117.2 448 288 448 288 448s170.8 0 213.4-11.49c23.5-6.321 42-24.17 48.28-47.82 11.41-42.87 11.41-132.3 11.41-132.3s0-89.44-11.41-132.3zm-317.5 213.5V175.2l142.7 81.21-142.7 81.2z"
+                  ></path>
+                </svg>
+                <span className="inline ">Youtube</span>
               </a>
             </div>
           </div>

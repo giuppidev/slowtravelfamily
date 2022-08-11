@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "ts-node ./scripts/copy-images.ts",
+    "postbuild": "next-sitemap",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel-build": "prisma generate && ts-node ./scripts/copy-images.ts && next build && next-sitemap"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.0",
@@ -16,10 +19,15 @@
     "@react-google-maps/api": "^2.12.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/typography": "^0.5.4",
     "@types/glob": "^7.2.0",
+    "contentlayer": "^0.2.7",
+    "date-fns": "^2.29.1",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
+    "markdown-wasm": "^1.2.0",
     "next": "12.1.5",
+    "next-contentlayer": "^0.2.7",
     "next-mdx-remote": "^4.0.3",
     "next-superjson": "^0.0.3",
     "react": "18.0.0",
@@ -34,6 +42,7 @@
     "eslint-config-next": "12.1.5",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.24",
+    "ts-node": "^10.9.1",
     "typescript": "4.6.3"
   }
 }
