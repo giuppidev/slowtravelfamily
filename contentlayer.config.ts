@@ -38,7 +38,7 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       required: true,
       description: "Post author",
-      default: "giuppi",
+      default: "barbi",
     },
     slug: {
       type: "string",
@@ -99,117 +99,9 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
-export const WorkPlace = defineDocumentType(() => ({
-  name: "WorkPlace",
-  filePathPattern: `work-places/**/*.(md|mdx)`,
-  contentType: "mdx",
-  fields: {
-    name: {
-      type: "string",
-      description: "The name of the work place",
-      required: true,
-    },
-    description: {
-      type: "string",
-      description: "The description of the work place",
-      required: true,
-    },
-    youtubeUrl: {
-      type: "string",
-      description: "The description of the work place",
-      required: false,
-    },
-    address: {
-      type: "string",
-      description: "The description of the work place",
-      required: true,
-    },
-    latitude: {
-      type: "number",
-      description: "The description of the work place",
-      required: true,
-    },
-    longitude: {
-      type: "number",
-      description: "The description of the work place",
-      required: true,
-    },
-    date: {
-      type: "date",
-      description: "The date of the post",
-      required: true,
-    },
-    image: {
-      type: "string",
-      description: "The cover image of the post",
-      required: true,
-    },
-    tags: {
-      type: `list`,
-      of: {
-        type: `string`,
-      },
-      description: "Array of tags",
-      required: true,
-    },
-    author: {
-      type: "string",
-      required: true,
-      description: "Post author",
-      default: "giuppi",
-    },
-    slug: {
-      type: "string",
-    },
-    draft: {
-      type: "boolean",
-      default: true,
-    },
-    path: {
-      type: "string",
-      description: "path of the post",
-      required: false,
-    },
-  },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (post) => `/work-places/${post._raw.flattenedPath}`,
-    },
-    workPlacePath: {
-      type: "string",
-      resolve: (post) => {
-        return getPath(post.path, post._raw.sourceFilePath);
-      },
-    },
-    publishedReadable: {
-      type: "string",
-      resolve: (post) => {
-        return printDate(new Date(post.date));
-      },
-    },
-    href: {
-      type: "string",
-      resolve: (post) => {
-        const postPath = getPath(post.path, post._raw.sourceFilePath);
-        return path.join("work-places", postPath);
-      },
-    },
-    imagePath: {
-      type: "string",
-      resolve: (post) => path.join("/.content", post._raw.sourceFileDir),
-    },
-    imageUrl: {
-      type: "string",
-      resolve: (post) =>
-        path.join("/.content", post._raw.sourceFileDir, post.image),
-    },
-  },
-}));
-
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Post, WorkPlace],
+  documentTypes: [Post],
   mdx: {
     remarkPlugins: [],
     rehypePlugins: [],

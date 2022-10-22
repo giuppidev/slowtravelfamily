@@ -4,7 +4,12 @@ const { withContentlayer } = require("next-contentlayer");
 module.exports = withContentlayer(
   withSuperjson()({
     images: {
-      domains: ["avatars.githubusercontent.com", "res.cloudinary.com"],
+      domains: [
+        "avatars.githubusercontent.com",
+        "res.cloudinary.com",
+        "blog.deskshake.com",
+        "www.travelworldaddict.com",
+      ],
     },
   })
 );

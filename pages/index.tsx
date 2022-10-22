@@ -1,30 +1,28 @@
+import Hero from "components/home/hero-new";
 import { PostPreview } from "components/post-preview";
 import { InferGetStaticPropsType } from "next";
-import Hero from "../components/home/hero";
 import Map from "../components/home/map";
 import Newsletter from "../components/home/newletter";
-import Steps from "../components/home/steps";
+import { Steps2 } from "../components/home/steps";
 import { getBlogData } from "../utils/blog";
 
 function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
       <Hero />
-      <Map />
-      <Steps />
-      <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3" />
-        </div>
+
+      <Steps2 />
+      <div className="relative bg-white py-8 lg:py-12 px-4 sm:px-6 lg:px-8">
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
-            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-              Ultimi articoli del Blog
-            </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-              libero labore natus atque, ducimus sed.
-            </p>
+            <div className="text-center  font-montserrat">
+              <h2 className=" text-base sm:text-xl uppercase tracking-tight  text-gray-900 ">
+                LASCIATI ISPIRARE
+              </h2>{" "}
+              <p className="mx-auto font-libre mt-3 max-w-5xl text-3xl sm:text-5xl text-gray-800 sm:mt-4">
+                Crea la vita che sogni per la tua famiglia
+              </p>
+            </div>
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
             {posts.map((post) => (
@@ -37,7 +35,6 @@ function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
           </div>
         </div>
       </div>
-      <Newsletter />
     </div>
   );
 }

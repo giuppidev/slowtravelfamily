@@ -66,7 +66,7 @@ export default function PostPage({
         <meta name="description" content={post.description} />
       </Head>
       <main className="wrapper py-10">
-        <h1 className="text-4xl md:text-6xl text-center py-2 sm:py-0 max-w-[900px] m-auto font-bold mt-10">
+        <h1 className="text-4xl font-libre md:text-6xl text-center py-2 sm:py-0 max-w-[900px] m-auto">
           {post.title}
         </h1>
 
@@ -98,12 +98,8 @@ export default function PostPage({
         </div>
 
         <div className="m-auto w-full mt-3 flex gap-2 justify-center">
-          {post.tags.map((tag) => (
-            <Link href={`/blog/tags#${tag}`} key={tag}>
-              <a>
-                <Tag tag={tag} />
-              </a>
-            </Link>
+          {post.tags.map((tag, k) => (
+            <Tag tag={tag} key={k} />
           ))}
         </div>
 

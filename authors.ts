@@ -7,9 +7,21 @@ export interface Author {
 
 export const authors: Author[] = [
   {
+    id: "barbi",
+    name: "Barbara",
+    bio: "Psicoterapeuta nomade",
+    profile: "/authors/barbi.jpeg",
+  },
+  {
     id: "giuppi",
-    name: "Giuseppe Funicello",
+    name: "Giuseppe",
     bio: "Digital nomad dev",
     profile: "/authors/giuppi.jpeg",
+  },
+  {
+    id: "slowtravelfamily",
+    name: "Giuppi e Barbi",
+    bio: "Coppia di nomadi digitali",
+    profile: "/authors/slowtravelfamily.png",
   },
 ];

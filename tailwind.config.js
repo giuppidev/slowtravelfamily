@@ -4,11 +4,24 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Libre Baskerville", "sans-serif"],
+      serif: ["Libre Baskerville"],
+    },
     extend: {
+      fontFamily: {
+        montserrat: ['"Montserrat"', "sans-serif"],
+        lora: ['"Lora"', "serif"],
+        libre: ["Libre Baskerville", "sans-serif"],
+      },
       colors: {
-        primaryGreen: "#3d746f",
-        primaryYellow: "#e1a738",
+        primaryGreen: "#03989E",
+        primaryYellow: "#FFBD59",
         primaryBlue: "#344f5d",
+      },
+      backgroundImage: {
+        hero: "url('/home/hero2.jpg')",
+        parents: "url('/home/slowtravelfamily.png')",
       },
     },
   },

@@ -14,7 +14,7 @@ export const PostPreview = ({ post, author }: PostPreviewProps) => {
     <Link href={post.href}>
       <a
         key={post.title}
-        className="flex flex-col rounded-lg shadow overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-primaryYellow cursor-pointer"
+        className="font-libre flex flex-col rounded-lg shadow overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-primaryYellow cursor-pointer"
       >
         <div className="flex-shrink-0">
           <Image
@@ -27,11 +27,6 @@ export const PostPreview = ({ post, author }: PostPreviewProps) => {
         </div>
         <div className="flex-1 bg-white p-6 flex flex-col justify-between">
           <div className="flex-1 ">
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <Tag key={tag} tag={tag} />
-              ))}
-            </div>
             <div className="block mt-2">
               <p className="text-xl font-semibold text-gray-900">
                 {post.title}
