@@ -44,8 +44,8 @@ export const Steps2 = () => {
           </p>
         </div>
         <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-          {steps.map((step) => (
-            <Step step={step} />
+          {steps.map((step, k) => (
+            <Step step={step} key={k} />
           ))}
         </div>
       </div>

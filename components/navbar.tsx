@@ -2,6 +2,7 @@
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { Logo } from "./logo";
@@ -127,16 +128,15 @@ export default function NavBar() {
       <div className="sticky  mx-auto px-4 sm:px-6  max-w-8xl h-28 ">
         <div className="flex flex-1 justify-between items-center   md:justify-start md:space-x-10 h-full">
           <div className="flex justify-start lg:flex-1 py-2">
-            <a
-              href="/"
-              className="flex items-center font-montserrat  text-xl py-2"
-            >
-              <span className="sr-only">Slow travel family</span>
+            <Link href={"/"} passHref>
+              <a className="flex items-center font-montserrat  text-xl py-2">
+                <span className="sr-only">Slow travel family</span>
 
-              <span className="-ml-0.5 pr-4 -mb-1 flex gap-2 items-center">
-                <Logo className="h-10 w-10 " /> SLOW TRAVEL FAMILY
-              </span>
-            </a>
+                <span className="-ml-0.5 pr-4 -mb-1 flex gap-2 items-center">
+                  <Logo className="h-10 w-10 " /> SLOW TRAVEL FAMILY
+                </span>
+              </a>
+            </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <Popover.Button
@@ -182,10 +182,11 @@ export default function NavBar() {
           </Popover.Group>
           <div className="hidden items-center justify-end space-x-4 md:flex-1 lg:flex lg:w-0">
             {social.map((soc, k) => (
-              <div className="flex rounded-md shadow">
+              <div className="flex rounded-md shadow" key={k}>
                 <a
                   href={soc.href}
                   target="_blank"
+                  rel="noreferrer"
                   className={`flex flex-row gap-1 w-32 items-center justify-center px-3 py-3 border border-transparent text-base font-medium rounded-md text-white ${soc.classes}`}
                 >
                   <soc.icon />

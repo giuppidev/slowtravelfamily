@@ -1,4 +1,5 @@
 import { HeroPage } from "components/home/hero-page";
+import Link from "next/link";
 
 const heroSub = <> </>;
 
@@ -115,12 +116,11 @@ export default function Hero() {
                     lavorando da remoto e occupandoci dell'educazione di nostro
                     figlio con la worldschooling.
                   </p>
-                  <a
-                    href="/our-story"
-                    className="border-b font-libre italic border-dashed border-b-gray-900 text-gray-500 hover:text-gray-900 text-base"
-                  >
-                    Scopri tutta la nostra storia
-                  </a>
+                  <Link href="/our-story" passHref>
+                    <a className="border-b font-libre italic border-dashed border-b-gray-900 text-gray-500 hover:text-gray-900 text-base">
+                      Scopri tutta la nostra storia
+                    </a>
+                  </Link>
                 </div>
               </blockquote>
             </div>
