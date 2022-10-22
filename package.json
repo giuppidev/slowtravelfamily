@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "prisma generate && ts-node ./scripts/copy-images.ts && next build && next-sitemap"
+    "vercel-build": " ts-node ./scripts/copy-images.ts && next build && next-sitemap"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.0",
