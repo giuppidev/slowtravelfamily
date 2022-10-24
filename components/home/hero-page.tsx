@@ -1,6 +1,3 @@
-import { TurleIcon } from "components/turtle";
-import { Logo } from "../logo";
-
 export const HeroPage = () => {
   return (
     <div
