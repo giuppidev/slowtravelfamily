@@ -125,7 +125,7 @@ export default function NavBar() {
       className={`sticky top-0 z-50  shadow transition-all duration-100 font-montserrat
     ${isScrolled ? "bg-white text-gray-800" : "bg-white text-gray-800"}`}
     >
-      <div className="sticky  mx-auto px-4 sm:px-6  max-w-8xl h-28 ">
+      <div className="sticky  mx-auto px-4 sm:px-10  max-w-8xl h-28 ">
         <div className="flex flex-1 justify-between items-center   md:justify-start md:space-x-10 h-full">
           <div className="flex justify-start lg:flex-1 py-2">
             <Link href={"/"} passHref>
@@ -133,7 +133,7 @@ export default function NavBar() {
                 <span className="sr-only">Slow travel family</span>
 
                 <span className="-ml-0.5 pr-4 -mb-1 flex gap-2 items-center">
-                  <Logo className="h-10 w-10 " /> SLOW TRAVEL FAMILY
+                  <Logo className="h-20 w-20 text-primaryGreen " />{" "}
                 </span>
               </a>
             </Link>
