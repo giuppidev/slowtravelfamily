@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Fragment, useCallback, useEffect, useState } from "react";
-import { Logo } from "./logo";
+import { Logo, Logo2, Logo3 } from "./logo";
 
 const social = [
   {
@@ -133,7 +133,7 @@ export default function NavBar() {
                 <span className="sr-only">Slow travel family</span>
 
                 <span className="-ml-0.5 pr-4 -mb-1 flex gap-2 items-center">
-                  <Logo className="h-20 w-20 text-primaryGreen " />{" "}
+                  <Logo3 className="h-20 w-20 text-primaryGreen " />{" "}
                 </span>
               </a>
             </Link>

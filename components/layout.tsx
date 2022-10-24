@@ -9,6 +9,10 @@ function Layout({ children }: { children: any }) {
         <title>Slow travel family</title>
         <meta name="description" content="Slow travel family" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="http://fonts.cdnfonts.com/css/libre-baskerville"
+          rel="stylesheet"
+        ></link>
       </Head>
       <main className="relative">
         <NavBar />
