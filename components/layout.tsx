@@ -10,7 +10,7 @@ function Layout({ children }: { children: any }) {
         <meta name="description" content="Slow travel family" />
         <link rel="icon" href="/favicon.ico" />
         <link
-          href="http://fonts.cdnfonts.com/css/libre-baskerville"
+          href="https://fonts.cdnfonts.com/css/libre-baskerville"
           rel="stylesheet"
         ></link>
       </Head>
