@@ -9,8 +9,14 @@ function Layout({ children }: { children: any }) {
         <title>Slow travel family</title>
         <meta name="description" content="Slow travel family" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          href="https://fonts.cdnfonts.com/css/libre-baskerville"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap"
           rel="stylesheet"
         ></link>
       </Head>

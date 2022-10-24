@@ -5,14 +5,14 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ["Libre Baskerville", "sans-serif"],
-      serif: ["Libre Baskerville"],
+      sans: ["Libre Baskerville"],
+      serif: ["Libre Baskerville", "serif"],
     },
     extend: {
       fontFamily: {
         montserrat: ['"Montserrat"', "sans-serif"],
         lora: ['"Lora"', "serif"],
-        libre: ["Libre Baskerville", "sans-serif"],
+        libre: ["Libre Baskerville", "serif"],
       },
       colors: {
         primaryGreen: "#03989E",
