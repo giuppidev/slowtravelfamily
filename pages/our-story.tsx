@@ -132,6 +132,7 @@ export default function OurStory() {
                 Con questo blog e il nostro canale{" "}
                 <a
                   target="_blank"
+                  rel="noreferrer"
                   href="https://www.youtube.com/@famigliaslowtravel"
                   className="underline text-gray-600 hover:text-green-800 visited:text-primaryGreen"
                 >

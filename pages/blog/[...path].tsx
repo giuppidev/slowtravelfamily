@@ -62,6 +62,7 @@ export default function PostPage({
       return (
         <a
           target="_blank"
+          rel="noreferrer"
           href={href}
           className="underline text-gray-600 hover:text-green-800 visited:text-primaryGreen"
         >
