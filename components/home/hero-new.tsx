@@ -101,26 +101,27 @@ export default function Hero() {
               </svg>
               <blockquote className="relative">
                 <div className="text-xl    text-gray-700">
-                  <p className="text-3xl sm:text-5xl mb-5 text-gray-700 font-libre">
+                  <p className="text-3xl sm:text-3xl pb-5 text-gray-700 font-libre">
                     Siamo Barbara e Giuseppe, due genitori nomadi digitali.
                   </p>
                   <p className=" font-libre ">
-                    Siamo due genitori che, insieme a nostro figlio Jacopo e
-                    alla nostra gatta kaki, hanno deciso di vivere viaggiando,
-                    lavorando da remoto e occupandoci dell'educazione di nostro
-                    figlio con la worldschooling.
+                    Con nostro figlio Jacopo e la nostra gatta Kaki abbiamo
+                    deciso di vivere viaggiando, lavorando da remoto ed educando
+                    nostro figlio con la worldschooling.
                   </p>
-                  <p className=" font-libre ">
-                    Siamo due genitori che, insieme a nostro figlio Jacopo e
-                    alla nostra gatta kaki, hanno deciso di vivere viaggiando,
-                    lavorando da remoto e occupandoci dell'educazione di nostro
-                    figlio con la worldschooling.
+                  <p className=" font-libre pt-2">
+                    Come Famiglia Slow Travel ti forniamo guide e consigli per
+                    viaggiare lentamente con i tuoi figli. La nostra speranza è
+                    ispirare altre famiglie che sono alla ricerca della loro{" "}
+                    <em>felicità</em>.
                   </p>
-                  <Link href="/our-story" passHref>
-                    <a className="border-b font-libre italic border-dashed border-b-gray-900 text-gray-500 hover:text-gray-900 text-base">
-                      Scopri tutta la nostra storia
-                    </a>
-                  </Link>
+                  <div className="pt-5">
+                    <Link href="/our-story" passHref>
+                      <a className="border-b pt-4 font-libre italic border-dashed border-b-gray-900 text-gray-500 hover:text-gray-900 text-base">
+                        Scopri tutta la nostra storia
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </blockquote>
             </div>

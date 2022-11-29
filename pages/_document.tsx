@@ -1,10 +1,11 @@
 import { Head, Html, Main, NextScript } from "next/document";
+import { useRouter } from "next/router";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html className="h-full bg-gray-50">
       <Head>
-        {" "}
         <GAHeader />
       </Head>
       <body className="h-full">
@@ -30,24 +31,26 @@ const GAHeader = () => {
   if (process.env.NODE_ENV !== "production") {
     return null;
   }
+
+  const gt = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS;
+  if (!gt) {
+    return null;
+  }
+
   return (
     <>
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gt}`}
       />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+      <Script id="analytics" strategy="afterInteractive">{`
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+    gtag('config', '${gt}', {
       page_path: window.location.pathname,
     });
-  `,
-        }}
-      />
+  `}</Script>
     </>
   );
 };

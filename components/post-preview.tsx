@@ -11,10 +11,10 @@ interface PostPreviewProps {
 
 export const PostPreview = ({ post, author }: PostPreviewProps) => {
   return (
-    <Link href={post.href}>
+    <Link href={post.href} passHref>
       <a
         key={post.title}
-        className="font-libre flex flex-col rounded-lg shadow overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-primaryYellow cursor-pointer"
+        className="font-libre flex flex-col rounded-lg shadow-xl overflow-hidden hover:shadow-xl hover:ring-2 hover:ring-primaryYellow cursor-pointer"
       >
         <div className="flex-shrink-0">
           <Image

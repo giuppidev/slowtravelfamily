@@ -7,7 +7,7 @@ const navigation = {
   social: [
     {
       name: "Youtube",
-      href: "#",
+      href: "https://www.youtube.com/@famigliaslowtravel",
       icon: (props: any) => (
         <svg
           aria-hidden="true"
@@ -28,7 +28,7 @@ const navigation = {
     },
     {
       name: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/famigliaslowtravel",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -74,7 +74,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2022 Slow travel family. All rights reserved.
+          &copy; 2022 Famiglia Slow Travel. All rights reserved.
         </p>
       </div>
     </footer>

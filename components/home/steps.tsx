@@ -4,30 +4,27 @@ const steps: Step[] = [
   {
     name: "Lavoro da remoto",
     number: 1,
-    imageUrl:
-      "https://blog.deskshake.com/wp-content/uploads/2019/12/libri-per-nomadi-digitali-1170x550.jpg",
+    imageUrl: "/home/remoteworking.png",
     description:
       "Lavorare da remoto ci permette di vivere viaggiando. In questa sezione troverai molti consigli utili.",
-    href: "#",
+    href: "/blog/2022/10/lavorare-da-remoto",
   },
   {
     name: "Worldschooling",
     number: 2,
-    imageUrl:
-      "https://www.travelworldaddict.com/wp-content/uploads/2019/06/nomadi-digitali-1068x712.jpg",
+    imageUrl: "/home/school.png",
     description:
       "Per l'educazione di nostro figlio abbiamo deciso di adottare la worldschooling, un modo per imparare dall'esperienza nel mondo.",
-    href: "#",
+    href: "/blog/2022/11/worldschooling",
   },
   {
     name: "Slow travel",
     number: 3,
 
-    imageUrl:
-      "https://blog.deskshake.com/wp-content/uploads/2017/10/nomadi-digitali-1170x550.jpeg",
+    imageUrl: "/home/slowtravel.png",
     description:
       "Viaggiare lentamente ci permette di entrare realmente a contatto con le realtà locali, conoscendo meglio nuove culture assaporando ogni esperienza lentamente.",
-    href: "/blog/2022/10/cosa-vuol-dire-slow-travel-family",
+    href: "/blog/2022/10/5-consigli-per-viaggiare-lentamente",
   },
 ];
 
@@ -37,7 +34,7 @@ export const Steps2 = () => {
       <div className="relative mx-auto max-w-7xl">
         <div className="text-center  font-montserrat">
           <h2 className=" text-base sm:text-xl uppercase tracking-tight  text-gray-900 ">
-            Diventa una slow travel family
+            Diventa una famiglia slow travel
           </h2>{" "}
           <p className="mx-auto font-libre mt-3 max-w-5xl text-3xl sm:text-5xl text-gray-800 sm:mt-4">
             Il nostro grande viaggio

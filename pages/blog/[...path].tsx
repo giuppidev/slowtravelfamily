@@ -8,6 +8,7 @@ import { authors } from "../../authors";
 import Image from "next/image";
 import { Tag } from "../../components/tag";
 import path from "path";
+import { SEO } from "components/seo";
 
 export async function getStaticPaths() {
   const paths = allPosts.map((d) => {
@@ -47,20 +48,39 @@ export default function PostPage({
   const MDXContent = useMDXComponent(post.body.code);
 
   const components = {
-    img: ({ src, alt }: { src: string; alt: string }) => {
+    Image: ({ src, alt }: { src: string; alt: string }) => {
       return (
         <img
-          className="m-auto"
+          className="m-auto rounded shadow-xl"
           alt={alt}
           src={path.join(post.imagePath, src!)}
         />
       );
     },
     pre: (props: any) => <pre {...props} className="no-prose" />,
+    Link: ({ href, label }: { href: string; label: string }) => {
+      return (
+        <a
+          target="_blank"
+          href={href}
+          className="underline text-gray-600 hover:text-green-800 visited:text-primaryGreen"
+        >
+          {label}
+        </a>
+      );
+    },
   };
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.description}
+        image={post.imageUrl!}
+        author={author.name}
+        date={new Date(post.date)}
+        type="article"
+      />
       <Head>
         <title>{post.title}</title>
         <meta name="description" content={post.description} />
@@ -83,6 +103,7 @@ export default function PostPage({
               />
             </a>
           </div>
+
           <div className="text-center">
             <p className="text-sm font-medium text-gray-900">
               <a href={"#"}>{author.name}</a>
@@ -97,7 +118,7 @@ export default function PostPage({
           </div>
         </div>
 
-        <div className="m-auto w-full mt-3 flex gap-2 justify-center">
+        <div className="m-auto w-full mt-3 flex gap-2 justify-center px-4">
           {post.tags.map((tag, k) => (
             <Tag tag={tag} key={k} />
           ))}

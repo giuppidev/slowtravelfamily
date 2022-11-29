@@ -10,7 +10,7 @@ import { Logo, Logo2, Logo3 } from "./logo";
 const social = [
   {
     name: "Youtube",
-    href: "https://www.youtube.com/channel/UCRPK-5ZgMPKIo3STHfVrmGw",
+    href: "https://www.youtube.com/@famigliaslowtravel",
     classes: "bg-red-500 hover:bg-red-700",
     icon: (props: any) => (
       <svg
@@ -32,7 +32,7 @@ const social = [
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/slowtravel.family",
+    href: "https://www.instagram.com/famigliaslowtravel",
     classes: "bg-pink-500 hover:bg-pink-700",
     icon: (props: any) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -71,17 +71,17 @@ const menu: Menu[] = [
       {
         name: "Lavoro remoto",
         description: "Risorse per aiutarti a lavorare ovunque",
-        href: "",
+        href: "/blog/2022/10/lavorare-da-remoto",
       },
       {
         name: "Worldschooling",
         description: "Come educare i figli viaggiando",
-        href: "",
+        href: "/blog/2022/11/worldschooling",
       },
       {
         name: "Viaggiare con figli",
         description: "Viaggiare con i proprio figli lentamente",
-        href: "",
+        href: "/blog/2022/10/5-consigli-per-viaggiare-lentamente",
       },
     ],
   },
@@ -290,7 +290,7 @@ const SubmenuComponent = ({ name, items }: SubmenuComponentProps) => {
         <>
           <Popover.Button
             className={classNames(
-              "inline-flex items-center p-3 rounded text-base  focus:outline-none uppercase ",
+              "relative inline-flex items-center p-3 rounded text-base  focus:outline-none uppercase after:content-[' '] after:block after:h-6 after:absolute after:-bottom-3 after:w-full",
               "  hover:bg-primaryGreen hover:text-white",
               isShowing ? "  bg-primaryGreen text-white" : ""
             )}
@@ -315,7 +315,7 @@ const SubmenuComponent = ({ name, items }: SubmenuComponentProps) => {
             show={isShowing}
           >
             <Popover.Panel
-              className="absolute z-10 -ml-4 mt-12 border-2 border-primaryGreen rounded transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
+              className="absolute z-10 -ml-4 top-12 border-2 border-primaryGreen rounded transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
               onMouseLeave={() => setIsShowing(false)}
               onMouseEnter={() => setIsShowing(true)}
             >

@@ -21,9 +21,9 @@ export const Step = ({
       <a key={name} className="flex flex-col  overflow-hidden  cursor-pointer">
         <div className="flex-shrink-0 rounded">
           <Image
-            height={250}
+            height={320}
             width={550}
-            className="h-64 w-full object-cover rounded-md"
+            className="h-72 w-full object-cover rounded-md shadow-xl"
             src={imageUrl}
             alt={name}
           />

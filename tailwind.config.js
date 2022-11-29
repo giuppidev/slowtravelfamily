@@ -20,7 +20,7 @@ module.exports = {
         primaryBlue: "#344f5d",
       },
       backgroundImage: {
-        hero: "url('/home/hero2.jpg')",
+        hero: "url('/home/slow3.png')",
         parents: "url('/home/slowtravelfamily.png')",
       },
     },

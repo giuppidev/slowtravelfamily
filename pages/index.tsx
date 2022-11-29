@@ -1,6 +1,8 @@
 import Hero from "components/home/hero-new";
 import { PostPreview } from "components/post-preview";
+import { SEO } from "components/seo";
 import { InferGetStaticPropsType } from "next";
+import Link from "next/link";
 import Map from "../components/home/map";
 import Newsletter from "../components/home/newletter";
 import { Steps2 } from "../components/home/steps";
@@ -9,6 +11,7 @@ import { getBlogData } from "../utils/blog";
 function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div>
+      <SEO title="Famiglia Slow Travel" />
       <Hero />
 
       <Steps2 />
@@ -33,6 +36,13 @@ function Home({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
               />
             ))}
           </div>
+          <div className="flex justify-center p-6">
+            <Link href="/blog" passHref>
+              <a className=" cursor-pointer border-b font-libre italic border-dashed border-b-gray-900 text-gray-500 hover:text-gray-900 text-base">
+                Leggi tutti i nostri articoli -{">"}
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
@@ -44,7 +54,7 @@ export async function getStaticProps() {
     .filter((p) => {
       return p.frontMatter._raw.sourceFilePath.startsWith("blog");
     })
-    .filter((_, idx) => idx < 9);
+    .filter((_, idx) => idx < 3);
 
   return {
     props: { posts },

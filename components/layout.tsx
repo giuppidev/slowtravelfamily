@@ -6,9 +6,9 @@ function Layout({ children }: { children: any }) {
   return (
     <div>
       <Head>
-        <title>Slow travel family</title>
-        <meta name="description" content="Slow travel family" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Famiglia Slow Travel</title>
+        <meta name="description" content="Famiglia Slow Travel" />
+        <link rel="icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
