@@ -1,4 +1,4 @@
-const siteUrl = "https://slowtravel.family";
+const siteUrl = "https://famigliaslowtravel.com";
 
 module.exports = {
   siteUrl,
