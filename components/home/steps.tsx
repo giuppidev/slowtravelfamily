@@ -1,10 +1,11 @@
+import { getCloudinaryPath } from "utils/cloudinary";
 import { Step } from "./step";
 
 const steps: Step[] = [
   {
     name: "Lavoro da remoto",
     number: 1,
-    imageUrl: "/home/remoteworking.png",
+    imageUrl: getCloudinaryPath("remoteworking_zawv50.png"),
     description:
       "Lavorare da remoto ci permette di vivere viaggiando. In questa sezione troverai molti consigli utili.",
     href: "/blog/2022/10/lavorare-da-remoto",
@@ -12,7 +13,7 @@ const steps: Step[] = [
   {
     name: "Worldschooling",
     number: 2,
-    imageUrl: "/home/school.png",
+    imageUrl: getCloudinaryPath("school_hrvopp.png"),
     description:
       "Per l'educazione di nostro figlio abbiamo deciso di adottare la worldschooling, un modo per imparare dall'esperienza nel mondo.",
     href: "/blog/2022/11/worldschooling",
@@ -20,8 +21,7 @@ const steps: Step[] = [
   {
     name: "Slow travel",
     number: 3,
-
-    imageUrl: "/home/slowtravel.png",
+    imageUrl: getCloudinaryPath("slowtravel_qipkdv.png"),
     description:
       "Viaggiare lentamente ci permette di entrare realmente a contatto con le realtà locali, conoscendo meglio nuove culture assaporando ogni esperienza lentamente.",
     href: "/blog/2022/10/5-consigli-per-viaggiare-lentamente",

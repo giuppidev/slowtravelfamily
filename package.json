@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "ts-node ./scripts/copy-images.ts",
     "postbuild": "next-sitemap",
     "build": "next build",
     "start": "next start",

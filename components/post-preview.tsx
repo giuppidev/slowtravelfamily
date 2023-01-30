@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { Post } from "../.contentlayer/generated";
-import { Tag } from "./tag";
 import type { Author } from "authors";
 import Image from "next/image";
+import Link from "next/link";
+import { getCloudinaryPath } from "utils/cloudinary";
+import { Post } from "../.contentlayer/generated";
 
 interface PostPreviewProps {
   post: Omit<Post, "body">;
@@ -10,6 +10,7 @@ interface PostPreviewProps {
 }
 
 export const PostPreview = ({ post, author }: PostPreviewProps) => {
+  const imageURL = getCloudinaryPath(post.image);
   return (
     <Link href={post.href} passHref>
       <a
@@ -21,7 +22,7 @@ export const PostPreview = ({ post, author }: PostPreviewProps) => {
             height={250}
             width={550}
             className="h-52 w-full object-cover"
-            src={post.imageUrl}
+            src={imageURL}
             alt={post.title}
           />{" "}
         </div>
@@ -42,7 +43,7 @@ export const PostPreview = ({ post, author }: PostPreviewProps) => {
                   width={40}
                   height={40}
                   className="h-10 w-10 rounded-full"
-                  src={author.profile}
+                  src={getCloudinaryPath(author.profile)}
                   alt=""
                 />
               </div>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="https://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml" xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="https://www.google.com/schemas/sitemap-image/1.1" xmlns:video="https://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://slowtravel.family</loc><lastmod>2022-11-28T17:40:48.421Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://slowtravel.family/blog</loc><lastmod>2022-11-28T17:40:48.421Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://slowtravel.family/our-story</loc><lastmod>2022-11-28T17:40:48.421Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://slowtravel.family/blog/2022/10/cosa-vuol-dire-slow-travel-family</loc><lastmod>2022-11-28T17:40:48.421Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://slowtravel.family/blog/2022/10/lavorare-da-remoto</loc><lastmod>2022-11-28T17:40:48.421Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://slowtravel.family/blog/2022/10/slow-travel</loc><lastmod>2022-11-28T17:40:48.421Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://famigliaslowtravel.com</loc><lastmod>2023-01-30T15:10:25.266Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://famigliaslowtravel.com/blog</loc><lastmod>2023-01-30T15:10:25.266Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://famigliaslowtravel.com/our-story</loc><lastmod>2023-01-30T15:10:25.266Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://famigliaslowtravel.com/blog/2022/10/5-consigli-per-viaggiare-lentamente</loc><lastmod>2023-01-30T15:10:25.266Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://famigliaslowtravel.com/blog/2022/10/lavorare-da-remoto</loc><lastmod>2023-01-30T15:10:25.266Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://famigliaslowtravel.com/blog/2022/10/slow-travel</loc><lastmod>2023-01-30T15:10:25.266Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://famigliaslowtravel.com/blog/2022/11/worldschooling</loc><lastmod>2023-01-30T15:10:25.266Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

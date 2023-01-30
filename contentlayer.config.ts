@@ -87,15 +87,6 @@ export const Post = defineDocumentType(() => ({
         return path.join("blog", postPath);
       },
     },
-    imagePath: {
-      type: "string",
-      resolve: (post) => path.join("/.content", post._raw.sourceFileDir),
-    },
-    imageUrl: {
-      type: "string",
-      resolve: (post) =>
-        path.join("/.content", post._raw.sourceFileDir, post.image),
-    },
   },
 }));
 

@@ -9,6 +9,7 @@ import Image from "next/image";
 import { Tag } from "../../components/tag";
 import path from "path";
 import { SEO } from "components/seo";
+import { getCloudinaryPath } from "utils/cloudinary";
 
 export async function getStaticPaths() {
   const paths = allPosts.map((d) => {
@@ -49,12 +50,10 @@ export default function PostPage({
 
   const components = {
     Image: ({ src, alt }: { src: string; alt: string }) => {
+      const imageURL = getCloudinaryPath(src);
+
       return (
-        <img
-          className="m-auto rounded shadow-xl"
-          alt={alt}
-          src={path.join(post.imagePath, src!)}
-        />
+        <img className="m-auto rounded shadow-xl" alt={alt} src={imageURL} />
       );
     },
     pre: (props: any) => <pre {...props} className="no-prose" />,
@@ -77,7 +76,7 @@ export default function PostPage({
       <SEO
         title={post.title}
         description={post.description}
-        image={post.imageUrl!}
+        image={post.image}
         author={author.name}
         date={new Date(post.date)}
         type="article"
@@ -99,7 +98,7 @@ export default function PostPage({
                 width={60}
                 height={60}
                 className="rounded-full"
-                src={author.profile}
+                src={getCloudinaryPath(author.profile)}
                 alt=""
               />
             </a>

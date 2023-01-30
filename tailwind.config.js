@@ -20,8 +20,9 @@ module.exports = {
         primaryBlue: "#344f5d",
       },
       backgroundImage: {
-        hero: "url('/home/slow3.png')",
-        parents: "url('/home/slowtravelfamily.png')",
+        hero: "url('https://res.cloudinary.com/de30mupo1/image/upload/w_1000,h_1000,c_limit/slowtravel/slow3_zzlgth.png')",
+        parents:
+          "url('https://res.cloudinary.com/de30mupo1/image/upload/w_1000,h_1000,c_limit/slowtravel/slowtravelfamily_toqhtk.png')",
       },
     },
   },

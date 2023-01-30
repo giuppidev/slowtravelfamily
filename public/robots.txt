@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://slowtravel.family
+Host: https://famigliaslowtravel.com
 
 # Sitemaps
-Sitemap: https://slowtravel.family/sitemap.xml
+Sitemap: https://famigliaslowtravel.com/sitemap.xml

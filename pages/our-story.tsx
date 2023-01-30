@@ -1,19 +1,20 @@
 import { CameraIcon } from "@heroicons/react/solid";
 import { SEO } from "components/seo";
 import Link from "next/link";
+import { getCloudinaryPath } from "utils/cloudinary";
 
 const people = [
   {
     name: "Barbara",
     role: "Mamma",
-    imageUrl: "/our-story/barbi.png",
+    imageUrl: getCloudinaryPath("barbi_y3mvfg.png"),
     bio: "Barbara è una giovane psicoterapeuta, mamma di Jacopo e lettrice incallita. È appassionata di avventure, educazione alternativa e consapevolezza. Amante dei viaggi e delle novità, é con suo figlio che sperimenta queste passioni, scoprendo una vita lenta fatta di curiosità e dettagli che trasmette a tutta la famiglia.",
     sentence: " Sempre alla ricerca della prossima meta da scoprire!",
   },
   {
     name: "Giuseppe",
     role: "Papà",
-    imageUrl: "/our-story/giuppi.png",
+    imageUrl: getCloudinaryPath("giuppi_yfyrld.png"),
     bio: "Giuseppe è un intraprendente sviluppatore, papà di Jacopo e runner. È una persona riflessiva, amante della meditazione, mente organizzativa della famiglia. Ama lanciarsi in nuove avventure, ma solo dopo averle accuratamente analizzate.",
     sentence:
       "Padre amorevole e attento, è la mente dietro ogni nuovo progetto di famiglia!",
@@ -21,7 +22,7 @@ const people = [
   {
     name: "Jacopo",
     role: "Piccolo viaggiatore",
-    imageUrl: "/our-story/jaco.png",
+    imageUrl: getCloudinaryPath("jaco_jfsvn1.png"),
     bio: "Jacopo è nato nel 2019, poco prima della pandemia, ed è il cuore e il motore delle nostre scelte. Ama correre, costruire e smontare qualsiasi cosa. Anima sensibile, è tanto curioso quanto amante della sua famiglia e per questo costituisce la vera ragione per vivere una vita lenta, fatta di presente e di momenti di scoperta e altri di coccole.",
 
     sentence:
@@ -30,7 +31,7 @@ const people = [
   {
     name: "Khaleese",
     role: "Gatta nera",
-    imageUrl: "/our-story/kaki.png",
+    imageUrl: getCloudinaryPath("kaki_hnmzqs.png"),
     bio: "Detta Kaki, è parte della nostra famiglia dalla sua nascita nel 2014. Amante della vita lenta, del cibo e dei divani, ha un ottimo spirito di adattamento. Preferisce l' aereo alla macchina ed è lei che ci fa decidere le prossime mete.",
 
     sentence: "Un altro motivo per stare più tempo in ogni nuovo posto!",

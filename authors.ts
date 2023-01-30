@@ -10,18 +10,18 @@ export const authors: Author[] = [
     id: "barbi",
     name: "Barbara",
     bio: "Psicoterapeuta nomade",
-    profile: "/authors/barbi.jpeg",
+    profile: "barbi_ddclcn.jpg",
   },
   {
     id: "giuppi",
     name: "Giuseppe",
     bio: "Digital nomad dev",
-    profile: "/authors/giuppi.jpeg",
+    profile: "giuppi_xaqcqp.jpg",
   },
   {
     id: "slowtravelfamily",
     name: "Giuppi e Barbi",
     bio: "Coppia di nomadi digitali",
-    profile: "/authors/slowtravelfamily.png",
+    profile: "slowtravelfamily_toqhtk.png",
   },
 ];

@@ -1,5 +1,6 @@
 import { HeroPage } from "components/home/hero-page";
 import Link from "next/link";
+import { getCloudinaryPath } from "utils/cloudinary";
 
 const heroSub = <> </>;
 
@@ -81,7 +82,7 @@ export default function Hero() {
             <div className="hidden lg:block lg:flex-shrink-0">
               <img
                 className="h-80 w-80 rounded-full xl:h-96 xl:w-96"
-                src="/home/slowtravelfamily.png"
+                src={getCloudinaryPath("slowtravelfamily_loffpc.png")}
                 alt=""
               />
             </div>
@@ -128,7 +129,7 @@ export default function Hero() {
             <div className="block lg:hidden lg:flex-shrink-0 mt-12">
               <img
                 className="h-80 w-80 rounded-full xl:h-96 xl:w-96"
-                src="/home/slowtravelfamily.png"
+                src={getCloudinaryPath("slowtravelfamily_loffpc.png")}
                 alt=""
               />
             </div>
